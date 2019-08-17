@@ -27,7 +27,7 @@ _typeX = typeOf _unit;
 //_skill = if (_typeX in sdkTier1) then {0.1 + (skillFIA * 0.2)} else {if (_typeX in sdkTier2) then {0.2 + (skillFIA * 0.2)} else {0.3 + (skillFIA * 0.2)}};
 _skill = 0.1 + (skillFIA * 0.05 * skillMult);
 if ((_markerX == "Synd_HQ") and (isMultiplayer)) then {_skill = 1};
-_unit setSkill _skill;
+_unit setSkill 1;
 if (!activeGREF) then {if (not((uniform _unit) in uniformsSDK)) then {[_unit] call A3A_fnc_reDress}};
 if (_typeX in SDKSniper) then
 	{
@@ -130,8 +130,8 @@ else
 						{
 						if (_typeX in squadLeaders) then
 							{
-							_unit setskill ["courage",_skill + 0.2];
-							_unit setskill ["commanding",_skill + 0.2];
+							_unit setskill ["courage",1];
+							_unit setskill ["commanding",1];
 							};
 						};
 					};

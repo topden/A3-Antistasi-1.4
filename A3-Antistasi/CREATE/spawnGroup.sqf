@@ -39,6 +39,7 @@ for "_i" from 0 to (_countX - 1) do
 	if ((_i == 0) or (((_allUnits + 1) < maxUnits) and ((_allUnitsSide + 1) < _maxUnitsSide)) or _override) then
 		{
 		_unit = _groupX createUnit [(_typesX select _i), _positionX, [], 0, "NONE"];
+		_unit setSkill 1;
 		_unit allowDamage false;
 		_allUnits = _allUnits + 1;
 		_allUnitsSide = _allUnitsSide + 1;
@@ -55,7 +56,3 @@ for "_i" from 0 to (_countX - 1) do
 //if (_index == -1) then {_groupX selectLeader (_unitsX select 0)} else {_groupX selectLeader (_unitsX select _index)};
 {_x allowDamage true} forEach units _groupX;
 _groupX
-
-
-
-

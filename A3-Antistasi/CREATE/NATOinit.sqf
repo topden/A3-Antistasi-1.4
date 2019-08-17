@@ -96,14 +96,14 @@ else
 	};
 
 if (_skill > 0.58) then {_skill = 0.58};
-_unit setSkill _skill;
+_unit setSkill 1;
 if (not(_typeX in sniperUnits)) then
 	{
-	if (_unit skill "aimingAccuracy" > 0.35) then {_unit setSkill ["aimingAccuracy",0.35]};
+	if (_unit skill "aimingAccuracy" > 0.35) then {_unit setSkill ["aimingAccuracy",1]};
 	if (_typeX in squadLeaders) then
 		{
-		_unit setskill ["courage",_skill + 0.2];
-		_unit setskill ["commanding",_skill + 0.2];
+		_unit setskill ["courage",1];
+		_unit setskill ["commanding",1];
 		};
 	};
 
@@ -187,8 +187,8 @@ if !(hasIFA) then
 			if (_lamp != "") then
 				{
 				_unit enableGunLights "AUTO";
-				_unit setskill ["spotDistance",_skill - 0.2];
-				_unit setskill ["spotTime",_skill - 0.2];
+				_unit setskill ["spotDistance",1];
+				_unit setskill ["spotTime",1];
 				};
 			};
 		}

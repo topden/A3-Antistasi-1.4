@@ -106,6 +106,7 @@ If (!_removeunit) then
 			_targetpos = _orgpos findEmptyPosition [5,50];
 			if (count _targetpos == 0) then {_targetpos = _orgpos};
 			_newunit = _group createUnit [_unittype, _targetpos, [], 0, "FORM"];
+			_newunit setSkill 1;
 			_equipment = _x select 1;
 			[_newunit,_equipment] call UPSMON_addequipment;
 

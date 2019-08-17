@@ -57,6 +57,7 @@ if ((spawner getVariable _markerX != 2) and _frontierX) then
 			_veh setDir _dirVeh + 180;
 			_typeUnit = if (_sideX==Occupants) then {staticCrewOccupants} else {staticCrewInvaders};
 			_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+			_unit setSkill 1;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
 			[_veh] call A3A_fnc_AIVEHinit;
 			_unit moveInGunner _veh;
@@ -74,6 +75,7 @@ if ((spawner getVariable _markerX != 2) and _frontierX) then
 				_vehiclesX pushBack _veh;
 				sleep 1;
 				_unit = _groupX createUnit [FIARifleman, _positionX, [], 0, "NONE"];
+				_unit setSkill 1;
 				_unit moveInGunner _veh;
 				{_soldiers pushBack _x; [_x,_markerX] call A3A_fnc_NATOinit} forEach units _groupX;
 				};

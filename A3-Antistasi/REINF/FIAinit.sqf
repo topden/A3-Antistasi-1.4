@@ -12,7 +12,7 @@ _skill = skillFIA * 0.05 * skillMult;
 if (!activeGREF) then {if (not((uniform _unit) in uniformsSDK)) then {[_unit] call A3A_fnc_reDress}};
 
 if ((!isMultiplayer) and (leader _unit == theBoss)) then {_skill = _skill + 0.1};
-_unit setSkill _skill;
+_unit setSkill 1;
 if (_typeX in SDKSniper) then
 	{
 	if (count unlockedSN > 0) then
@@ -35,7 +35,7 @@ if (_typeX in SDKSniper) then
 	}
 else
 	{
-	if (_unit skill "aimingAccuracy" > 0.35) then {_unit setSkill ["aimingAccuracy",0.35]};
+	if (_unit skill "aimingAccuracy" > 0.35) then {_unit setSkill ["aimingAccuracy",1]};
 	if (random 40 < skillFIA) then
 		{
 		if (getNumber (configfile >> "CfgWeapons" >> headgear _unit >> "ItemInfo" >> "HitpointsProtectionInfo" >> "Head" >> "armor") < 2) then {removeHeadgear _unit;_unit addHeadgear (selectRandom helmets)};
@@ -123,8 +123,8 @@ else
 							{
 							if (_typeX in squadLeaders) then
 								{
-								_unit setskill ["courage",_skill + 0.2];
-								_unit setskill ["commanding",_skill + 0.2];
+								_unit setskill ["courage",1];
+								_unit setskill ["commanding",1];
 								};
 							};
 						};
@@ -309,5 +309,3 @@ else
 		_victim setVariable ["spawner",nil,true];
 		}];
 	};
-
-

@@ -45,10 +45,13 @@ _base = [_arrayAirports, _positionX] call BIS_Fnc_nearestPosition;
 _posBase = getMarkerPos _base;
 
 _traitor = _groupTraitor createUnit [NATOOfficer2, _posTraitor, [], 0, "NONE"];
+_traitor setSkill 1;
 _traitor allowDamage false;
 _traitor setPos _posTraitor;
 _sol1 = _groupTraitor createUnit [NATOBodyG, _posSol1, [], 0, "NONE"];
+_sol1 setSkill 1;
 _sol2 = _groupTraitor createUnit [NATOBodyG, _posSol2, [], 0, "NONE"];
+_sol2 setSkill 1;
 _groupTraitor selectLeader _traitor;
 
 _posTsk = (position _houseX) getPos [random 100, random 360];
@@ -138,7 +141,7 @@ if (not alive _traitor) then
 			{
 			_skill = skill _x;
 			_skill = _skill + 0.1;
-			_x setSkill _skill;
+			_x setSkill 1;
 			}
 		else
 			{
@@ -156,7 +159,7 @@ if (not alive _traitor) then
 			{
 			_skill = skill _x;
 			_skill = _skill + 0.1;
-			_x setSkill _skill;
+			_x setSkill 1;
 			}
 		else
 			{

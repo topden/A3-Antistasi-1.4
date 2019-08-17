@@ -26,13 +26,16 @@ _grp = createGroup _sideX;
 
 _typeX = if (_sideX == Occupants) then {NATOOfficer} else {CSATOfficer};
 _official = _grp createUnit [_typeX, _positionX, [], 0, "NONE"];
+_official setSkill 1;
 _typeX = if (_sideX == Occupants) then {NATOBodyG} else {CSATBodyG};
 _pilot = _grp createUnit [_typeX, _positionX, [], 0, "NONE"];
+_pilot setSkill 1;
 if (_difficultX) then
 	{
 	for "_i" from 1 to 4 do
 		{
 		_pilot = _grp createUnit [_typeX, _positionX, [], 0, "NONE"];
+		_pilot setSkill 1;
 		};
 	};
 

@@ -47,6 +47,7 @@ for "_i" from 0 to (count _buildings) - 1 do
 			_veh setDir (getDir _building);
 			_veh setPosATL [(getPos _building select 0),(getPos _building select 1),(getPosATL _veh select 2)];
 			_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+			_unit setSkill 1;
 			[_unit,_markerX] call A3A_fnc_NATOinit;
 			_unit moveInGunner _veh;
 			_soldiers pushBack _unit;
@@ -63,6 +64,7 @@ for "_i" from 0 to (count _buildings) - 1 do
 				_veh setPosATL _pos;
 				_veh setDir (getDir _building) - 180;
 				_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+				_unit setSkill 1;
 				[_unit,_markerX] call A3A_fnc_NATOinit;
 				_unit moveInGunner _veh;
 				_soldiers pushBack _unit;
@@ -75,6 +77,7 @@ for "_i" from 0 to (count _buildings) - 1 do
 					_typeVehX = if (_sideX == Occupants) then {NATOMG} else {CSATMG};
 					_veh = createVehicle [_typeVehX, (_building buildingPos 11), [], 0, "CAN_COLLIDE"];
 					_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+					_unit setSkill 1;
 					[_unit,_markerX] call A3A_fnc_NATOinit;
 					_unit moveInGunner _veh;
 					_soldiers pushBack _unit;
@@ -82,6 +85,7 @@ for "_i" from 0 to (count _buildings) - 1 do
 					sleep 0.5;
 					_veh = createVehicle [_typeVehX, (_building buildingPos 13), [], 0, "CAN_COLLIDE"];
 					_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+					_unit setSkill 1;
 					[_unit,_markerX] call A3A_fnc_NATOinit;
 					_unit moveInGunner _veh;
 					_soldiers pushBack _unit;

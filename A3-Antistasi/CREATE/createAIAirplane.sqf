@@ -78,6 +78,7 @@ if ((spawner getVariable _markerX != 2) and _frontierX) then
 		_veh setPos _pos;
 		_typeUnit = if (_sideX==Occupants) then {staticCrewOccupants} else {staticCrewInvaders};
 		_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+		_unit setSkill 1;
 		[_unit,_markerX] call A3A_fnc_NATOinit;
 		[_veh] call A3A_fnc_AIVEHinit;
 		_unit moveInGunner _veh;
@@ -144,6 +145,7 @@ if (spawner getVariable _markerX != 2) then
 	_veh setPosATL (_x select 0);
 	_nul=[_veh] execVM "scripts\UPSMON\MON_artillery_add.sqf";
 	_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+	_unit setSkill 1;
 	[_unit,_markerX] call A3A_fnc_NATOinit;
 	_unit moveInGunner _veh;
 	_soldiers pushBack _unit;
@@ -168,6 +170,7 @@ if (spawner getVariable _markerX != 2) then
 		_veh setDir (_x select 1);
 		_veh setPosATL (_x select 0);
 		_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+		_unit setSkill 1;
 		[_unit,_markerX] call A3A_fnc_NATOinit;
 		_unit moveInGunner _veh;
 		_soldiers pushBack _unit;
@@ -194,6 +197,7 @@ if (spawner getVariable _markerX != 2) then
 		_veh setDir (_x select 1);
 		_veh setPosATL (_x select 0);
 		_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+		_unit setSkill 1;
 		[_unit,_markerX] call A3A_fnc_NATOinit;
 		_unit moveInGunner _veh;
 		_soldiers pushBack _unit;
@@ -220,6 +224,7 @@ if (spawner getVariable _markerX != 2) then
 		_veh setDir (_x select 1);
 		_veh setPosATL (_x select 0);
 		_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+		_unit setSkill 1;
 		[_unit,_markerX] call A3A_fnc_NATOinit;
 		_unit moveInGunner _veh;
 		_soldiers pushBack _unit;
@@ -352,5 +357,3 @@ if (!(_x in staticsToSave)) then
 	if ((!([distanceSPWN-_size,1,_x,teamPlayer] call A3A_fnc_distanceUnits))) then {deleteVehicle _x}
 	};
 } forEach _vehiclesX;
-
-

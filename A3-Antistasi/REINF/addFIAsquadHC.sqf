@@ -144,6 +144,7 @@ else
 		{
 		_pos = _pos findEmptyPosition [1,30,SDKMortar];
 		_morty = _groupX createUnit [staticCrewTeamPlayer, _pos, [],0, "NONE"];
+		_morty setSkill 1;
 		_mortarX = _typeGroup createVehicle _pos;
 		_nul = [_mortarX] call A3A_fnc_AIVEHinit;
 		_mortarX attachTo [_truckX,[0,-1.5,0.2]];

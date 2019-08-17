@@ -46,13 +46,13 @@ _groupPOW = createGroup teamPlayer;
 for "_i" from 1 to (((count _posHouse) - 1) min 15) do
 	{
 	_unit = _groupPOW createUnit [SDKUnarmed, _posHouse select _i, [], 0, "NONE"];
+	_unit setSkill 1;
 	_unit allowdamage false;
 	_unit disableAI "MOVE";
 	_unit disableAI "AUTOTARGET";
 	_unit disableAI "TARGET";
 	_unit setBehaviour "CARELESS";
 	_unit allowFleeing 0;
-	_unit setSkill 0;
 	_POWs pushBack _unit;
 	[_unit,"refugee"] remoteExec ["A3A_fnc_flagaction",[teamPlayer,civilian],_unit];
 	if (_sideX == Occupants) then {[_unit,true] remoteExec ["setCaptive",0,_unit]; _unit setCaptive true};

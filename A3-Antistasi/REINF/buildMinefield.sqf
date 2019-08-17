@@ -67,8 +67,10 @@ _mrk setMarkerText _textX;
 _groupX = createGroup teamPlayer;
 
 _unit = _groupX createUnit [(SDKExp select 0), (getMarkerPos respawnTeamPlayer), [], 0, "NONE"];
+_unit setSkill 1;
 sleep 1;
 _unit = _groupX createUnit [(SDKExp select 0), (getMarkerPos respawnTeamPlayer), [], 0, "NONE"];
+_unit setSkill 1;
 _groupX setGroupId ["MineF"];
 
 _road = [getMarkerPos respawnTeamPlayer] call A3A_fnc_findNearestGoodRoad;
@@ -145,4 +147,3 @@ else
 	deleteVehicle _truckX;
 	deleteMarker _mrk;
 	};
-

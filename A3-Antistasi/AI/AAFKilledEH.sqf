@@ -35,7 +35,7 @@ if (side (group _killer) == teamPlayer) then
 	else
 		{
 		_skill = skill _killer;
-		[_killer,_skill + 0.05] remoteExec ["setSkill",_killer];
+		[_killer,1] remoteExec ["setSkill",_killer];
 		};
 	if (vehicle _killer isKindOf "StaticMortar") then
 		{
@@ -98,4 +98,3 @@ if (_markerX != "") then
 		};
 	};
 [_groupX,_killer] spawn A3A_fnc_AIreactOnKill;
-

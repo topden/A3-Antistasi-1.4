@@ -286,6 +286,7 @@ if (_typeConvoyX == "Prisoners") then
 	for "_i" from 1 to (1+ round (random 11)) do
 		{
 		_unit = _grpPOW createUnit [SDKUnarmed, _posbase, [], 0, "NONE"];
+		_unit setSkill 1;
 		[_unit,true] remoteExec ["setCaptive",0,_unit];
 		_unit setCaptive true;
 		_unit disableAI "MOVE";

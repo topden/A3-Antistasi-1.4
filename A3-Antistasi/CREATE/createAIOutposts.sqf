@@ -103,6 +103,7 @@ if ((_frontierX) and (spawner getVariable _markerX!=2) and (_markerX in outposts
 	_veh = _typeVehX createVehicle _pos;
 	_nul=[_veh] execVM "scripts\UPSMON\MON_artillery_add.sqf";
 	_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+	_unit setSkill 1;
 	[_unit,_markerX] call A3A_fnc_NATOinit;
 	_unit moveInGunner _veh;
 	_soldiers pushBack _unit;
@@ -188,6 +189,7 @@ else
 					_veh setDir _dirVeh + 180;
 					_typeUnit = if (_sideX==Occupants) then {staticCrewOccupants} else {staticCrewInvaders};
 					_unit = _groupX createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+					_unit setSkill 1;
 					[_unit,_markerX] call A3A_fnc_NATOinit;
 					[_veh] call A3A_fnc_AIVEHinit;
 					_unit moveInGunner _veh;
@@ -205,6 +207,7 @@ else
 						_vehiclesX pushBack _veh;
 						sleep 1;
 						_unit = _groupX createUnit [FIARifleman, _positionX, [], 0, "NONE"];
+						_unit setSkill 1;
 						_unit moveInGunner _veh;
 						{_soldiers pushBack _x; [_x,_markerX] call A3A_fnc_NATOinit} forEach units _groupX;
 						};
@@ -246,6 +249,7 @@ if ((!isNull _antenna) and (spawner getVariable _markerX!=2)) then
 			};
 		_typeUnit = if (_sideX == Occupants) then {if (!_isFIA) then {NATOMarksman} else {FIAMarksman}} else {CSATMarksman};
 		_unit = _groupX createUnit [_typeUnit, _positionX, [], _dir, "NONE"];
+		_unit setSkill 1;
 		_unit setPosATL _posF;
 		_unit forceSpeed 0;
 		//_unit disableAI "MOVE";

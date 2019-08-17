@@ -75,6 +75,7 @@ if (_isControl) then
 			_groupE = createGroup _sideX;
 			_typeUnit = if (_sideX == Occupants) then {staticCrewOccupants} else {staticCrewInvaders};
 			_unit = _groupE createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+			_unit setSkill 1;
 			_unit moveInGunner _veh;
 			_soldiers pushBack _unit;
 			sleep 1;
@@ -91,6 +92,7 @@ if (_isControl) then
 			_veh setDir _dirVeh;
 			sleep 1;
 			_unit = _groupE createUnit [_typeUnit, _positionX, [], 0, "NONE"];
+			_unit setSkill 1;
 			_unit moveInGunner _veh;
 			_soldiers pushBack _unit;
 			sleep 1;
@@ -127,6 +129,7 @@ if (_isControl) then
 		if !(isNull _groupX) then
 			{
 			_unit = _groupX createUnit [FIARifleman, _positionX, [], 0, "NONE"];
+			_unit setSkill 1;
 			_unit moveInGunner _veh;
 			{_soldiers pushBack _x; [_x,""] call A3A_fnc_NATOinit} forEach units _groupX;
 			};
@@ -308,4 +311,3 @@ if (_conquered) then
 		*/
 		};
 	};
-

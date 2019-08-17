@@ -81,12 +81,14 @@ if (_index == -1) exitWith {};
 if (typeOf _x == SDKMortar) then
 	{
 	_unit = _groupMortar createUnit [(_garrison select _index), _positionX, [], 0, "NONE"];
+	_unit setSkill 1;
 	_unit moveInGunner _x;
 	_nul=[_x] execVM "scripts\UPSMON\MON_artillery_add.sqf";
 	}
 else
 	{
 	_unit = _groupEst createUnit [(_garrison select _index), _positionX, [], 0, "NONE"];
+	_unit setSkill 1;
 	_unit moveInGunner _x;
 	};
 [_unit,_markerX] call A3A_fnc_FIAinitBases;
@@ -98,6 +100,7 @@ if (staticCrewTeamPlayer in _garrison) then
 	{
 	{
 	_unit = _groupMortar createUnit [staticCrewTeamPlayer, _positionX, [], 0, "NONE"];
+	_unit setSkill 1;
 	_pos = [_positionX] call A3A_fnc_mortarPos;
 	_veh = SDKMortar createVehicle _pos;
 	_vehiclesX pushBack _veh;
@@ -117,6 +120,7 @@ while {(spawner getVariable _markerX != 2) and (_countX < _radiusX)} do
 	{
 	_typeX = _garrison select _countX;
 	_unit = _groupX createUnit [_typeX, _positionX, [], 0, "NONE"];
+	_unit setSkill 1;
 	if (_typeX in SDKSL) then {_groupX selectLeader _unit};
 	[_unit,_markerX] call A3A_fnc_FIAinitBases;
 	_soldiers pushBack _unit;
