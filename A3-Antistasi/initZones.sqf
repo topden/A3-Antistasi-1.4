@@ -11,7 +11,7 @@ forcedSpawn = [];
 citiesX = [];
 
 switch worldName do {
-	case "Tanoa": {
+	case "tanoa": {
 		diag_log format ["%1: [Antistasi] | INFO | initZones | Setting Spawn Points for %2.",servertime,worldname];
 		airportsX = ["airport","airport_1","airport_2","airport_3","airport_4"];//airports
 		spawnPoints = ["spawnPoint","spawnPoint_1","spawnPoint_2","spawnPoint_3","spawnPoint_4"];
@@ -24,7 +24,7 @@ switch worldName do {
 		seaSpawn = ["seaSpawn","seaSpawn_1","seaSpawn_2","seaSpawn_3","seaSpawn_4","seaSpawn_5","seaSpawn_6","seaSpawn_7","seaSpawn_8","seaSpawn_9","seaSpawn_10","seaSpawn_11","seaSpawn_12","seaSpawn_13","seaSpawn_14","seaSpawn_15","seaSpawn_16","seaSpawn_17","seaSpawn_18","seaSpawn_19","seaSpawn_20","seaSpawn_21","seaSpawn_22","seaSpawn_23","seaSpawn_24","seaSpawn_25","seaSpawn_26","seaSpawn_27","seaSpawn_28","seaSpawn_29","seaSpawn_30","seaSpawn_31","seaSpawn_32"];
 		seaAttackSpawn = ["seaAttackSpawn","seaAttackSpawn_1","seaAttackSpawn_2","seaAttackSpawn_3","seaAttackSpawn_4","seaAttackSpawn_5","seaAttackSpawn_6","seaAttackSpawn_7","seaAttackSpawn_8","seaAttackSpawn_9","seaAttackSpawn_10"];
     };
-    case "Altis": {
+    case "altis": {
         diag_log format ["%1: [Antistasi] | INFO | initZones | Setting Spawn Points for %2.",servertime,worldname];
         airportsX = ["airport","airport_1","airport_2","airport_3","airport_4","airport_5"];//airports
         spawnPoints = ["spawnPoint","spawnPoint_1","spawnPoint_2","spawnPoint_3","spawnPoint_4","spawnPoint_5"];
