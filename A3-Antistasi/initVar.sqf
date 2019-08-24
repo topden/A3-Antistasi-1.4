@@ -353,9 +353,9 @@ if (!hasIFA) then {
 
 diag_log format ["%1: [Antistasi] | INFO | initVar | Assigning Squad Types.", servertime];
 
-squadLeaders = SDKSL + ({_x select 0} forEach [NATOSquad, NATOSpecOp, CSATSquad, CSATSpecOp, FIASquad]);
+squadLeaders = SDKSL + ([NATOSquad, NATOSpecOp, CSATSquad, CSATSpecOp, FIASquad] apply {_x select 0});
 
-medics = SDKMedic + ({_x select ((count _x) - 1)} forEach [FIAsquad, NATOSquad, NATOSpecOp, CSATSquad, CSATSpecOp]);
+medics = SDKMedic + ([FIAsquad, NATOSquad, NATOSpecOp, CSATSquad, CSATSpecOp] apply {_x select ((count _x) - 1)});
 
 sdkTier1 = SDKMil + [staticCrewTeamPlayer] + SDKMG + SDKGL + SDKATman;
 sdkTier2 = SDKMedic + SDKExp + SDKEng;
