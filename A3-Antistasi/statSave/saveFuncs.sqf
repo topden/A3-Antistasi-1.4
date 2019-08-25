@@ -345,14 +345,15 @@ fn_SetStat = {
 				} forEach controlsX;
 
 				respawnTeamPlayer setMarkerPos _posHQ;
+				posHQ = getMarkerPos respawnTeamPlayer;
 				petros setPos _posHQ;
 				"Synd_HQ" setMarkerPos _posHQ;
 
 				if (chopForest) then {
 					if (!isMultiplayer) then {
-						{ _x hideObject true } foreach (nearestTerrainObjects [position petros, ["tree","bush"],70])
+						{ _x hideObject true } foreach (nearestTerrainObjects [position petros, ["tree", "bush"], 70])
 					} else {
-						{ _x hideObjectGlobal true } foreach (nearestTerrainObjects [position petros, ["tree","bush"],70])
+						{ _x hideObjectGlobal true } foreach (nearestTerrainObjects [position petros, ["tree", "bush"], 70])
 					};
 				};
 
