@@ -657,3 +657,22 @@ disableSerialization;
 _layer = ["statisticsX"] call bis_fnc_rscLayer;
 _layer cutRsc ["H8erHUD","PLAIN",0,false];
 [] spawn A3A_fnc_statistics;
+
+while {true} do {
+	sleep 180;	//каждые  проверяет на нахождение в тс
+		
+	["ARMA 3 REALWAR",45] spawn {
+	params ["_serverName","_time"];
+	if ((call TFAR_fnc_getTeamSpeakServerName) == _serverName) exitwith {};
+	cutText ["", "BLACK FADED", _time+2];
+	_time = _time + time;
+
+	waituntil {Sleep 2;
+	["<t size='2.5' color='#FF0000'>Вы не подключены<br />к TeamSpeak серверу!<br /><br />IP адрес: <br /><t color='#00ff00'>arma3realwar",0,0,1] spawn BIS_fnc_dynamicText;
+	((call TFAR_fnc_getTeamSpeakServerName) == _serverName) or (time > _time)};
+	cutText ["", "BLACK IN", 2];
+	if ((call TFAR_fnc_getTeamSpeakServerName) == _serverName) exitwith {};
+	["Endts",true,2] call BIS_fnc_endMission;
+	};
+
+};
