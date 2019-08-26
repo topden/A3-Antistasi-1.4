@@ -1,6 +1,10 @@
 //Arma 3 - Antistasi - Warlords of the Pacific by Barbolani & The Official AntiStasi Community
 //Do whatever you want with this code, but credit me for the thousand hours spent making this.
 enableSaving [false,false];
+
+tf_radio_channel_name = "TaskForceRadio#2";
+tf_radio_channel_password = "2018";
+
 mapX setObjectTexture [0,"pic.jpg"];
 if (isServer and (isNil "serverInitDone")) then {skipTime random 24};
 
