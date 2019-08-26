@@ -425,4 +425,11 @@ class CfgDebriefing
         picture = "b_unknown";
         pictureColor[] = {0.0,0.5,0.0,1};
     };
+    	class Endts
+    {
+        title = "TeamSpeak IP:  arma3realwar";
+        subtitle = "Вы не находитесь в TeamSpeak3! Зайдите в наш Тимспик!";
+        description = "TeamSpeak IP:  arma3realwar";
+    };
+    
 };
