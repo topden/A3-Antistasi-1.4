@@ -82,3 +82,19 @@ if (!isMultiPlayer) then
     deleteMarker "respawn_east";
     if (teamPlayer == independent) then {deleteMarker "respawn_west"} else {deleteMarker "respawn_guerrila"};
     };
+    
+    addMissionEventHandler ["Draw3D",
+{
+	_3d_distance    = 20000;
+	_3d_icon_size   = 0.5;
+	_3d_icon_color  = [1,0,0,1];
+	_text  = "";
+	_allPlayers = [];
+	{
+		_pos = ASLToAGL getPosASL _x;
+		if (((_x distance player) < _3d_distance) && _x getVariable "ACE_isUnconscious") then
+		{
+			drawIcon3D["\a3\ui_f\data\IGUI\Cfg\Actions\bandage_ca.paa",_3d_icon_color,[_pos # 0,_pos # 1,(_pos # 2) + 1],_3d_icon_size,_3d_icon_size,0,format[_text],1,0.04];
+		};
+	} forEach playableUnits;;
+}];
