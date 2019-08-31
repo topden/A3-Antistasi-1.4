@@ -2,6 +2,10 @@ diag_log format ["%1: [Antistasi] | INFO | Init Started.",servertime];
 //Arma 3 - Antistasi - Warlords of the Pacific by Barbolani & The Official AntiStasi Community
 //Do whatever you want with this code, but credit me for the thousand hours spent making this.
 enableSaving [false,false];
+
+tf_radio_channel_name = "TaskForceRadio#2";
+tf_radio_channel_password = "2018";
+
 mapX setObjectTexture [0,"pic.jpg"];
 if (isServer and (isNil "serverInitDone")) then {skipTime random 24};
 
@@ -83,3 +87,20 @@ if (!isMultiPlayer) then
     if (teamPlayer == independent) then {deleteMarker "respawn_west"} else {deleteMarker "respawn_guerrila"};
     };
     diag_log format ["%1: [Antistasi] | INFO | Init finished.",servertime];
+    
+addMissionEventHandler ["Draw3D",
+{
+	_3d_distance    = 15000;
+	_3d_icon_size   = 0.5;
+	_3d_icon_color  = [1,0,0,1];
+	_text  = "";
+	_allPlayers = [];
+	{
+		_pos = ASLToAGL getPosASL _x;
+		if (((_x distance player) < _3d_distance) && _x getVariable "ACE_isUnconscious") then
+		{
+			drawIcon3D["\a3\ui_f\data\IGUI\Cfg\Revive\overlayIcons\u100_ca.paa",_3d_icon_color,[_pos # 0,_pos # 1,(_pos # 2) + 1],_3d_icon_size,_3d_icon_size,0,format[_text],1,0.04];
+		};
+	} forEach playableUnits;;
+}];
+
